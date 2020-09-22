@@ -1,0 +1,53 @@
+se for indicado a opção ./fundos_CGD.sh -i 											-> FEITO
+	descaregar pagina 													-> FEITO
+	gravar como fundos_CGD_20200323												-> FEITO
+se for indicado a opção ./fundos_CGD.sh -h 											-> FEITO
+	mostrar ajuda 														-> FEITO
+se nao for indicado 														-> FEITO
+	extrair dados do ficheiro fundos_CGD_20200323										-> FEITO
+	se nao existir ficheiro apresentar mensagem [ERRO]: ficheiro ‘fundos_CGD_DATA.html’ não encontrado no diretório local. 	-> FEITO
+se for indicado a opção ./fundos_CGD.sh -d											-> FEITO
+	Elimina diretoria													-> FEITO
+se for indicado + que 1 parametro 												-> FEITO
+	Mostra erro														-> FEITO
+se for indicado paramatro errado 												-> FEITO
+	Mostra erro														-> FEITO
+
+extrair dados 															->FEITO
+	extrair dados de 													->FEITO
+		dia														->FEITO
+		dia anterior													->FEITO
+		rentabilidade anualizada 12 meses										->FEITO
+		rentabilidade anualizada 24 meses										->FEITO
+
+a saida deve ser a seguinte:													->FEITO
+	
+data|23-03-2020 
+Fundo|data|data-1|12meses|24meses 
+EU|7.4146|7.2731|-18.18%|-11.26%| 
+EUA|7.0701|7.1075|-17.03%|-4.07%| 
+PT|8.4088|8.2884|-33.90%|-18.97%| 
+ORI|6.7721|6.8034|-12.29%|-5.01%| 
+EMER|6.942|7.0411|-20.02%|-13.50%| 
+GLOB|7.7295|7.86|-7.92%|4.09%| 
+Reforma|12.8518|12.8255|-3.38%|-2.56%|
+
+substituir virgula por ponto no resultado de saida 										->FEITO
+
+Para cada linha:
+	Se não existir:														->FEITO
+		Criar um ficheiro .dat no subdiretorio ARQUIVO
+			Se o subdiretorio ARQUIVO nao existir:
+				Criar subdiretorio 										->FEITO
+			Se sim
+				Criar um ficheiro com o seguinte formato:							->FEITO	
+				# Dados para o fundo EU  									->FEITO
+				# AUTOR_A/NUMERO_A_IPLeiria 									->FEITO	
+				# AUTOR_B/NUMERO_B_IPLeiria 									->FEITO
+				# Criado: 2020.03.22_21h:50:15									->FEITO	
+				22-03-2020:7.1234 										->FEITO 
+	Se ja existir:													
+		adicionar uma linha ao ficheiro se o valor for diferente do ultimo						->FEITO
+
+
+Manual de ajuda na questão de funções, returns e mais algumas coisas: https://www.tldp.org/LDP/abs/html/abs-guide.html#FUNCTIONS
